@@ -1,0 +1,351 @@
+* {
+    font-family: Montserrat, Roboto, sans-serif;
+    margin: 1px 0 0;
+
+}
+
+body {
+    margin: 0;
+    padding-top: 100px;
+}
+
+header {
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav-svg {
+    margin-bottom: 0.5rem; /* Используем rem */
+}
+
+.nav-button {
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 10px 14px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.2s ease;
+    color: #000000;
+}
+
+.nav-button:hover {
+    border-radius: 0.75rem; /* Используем rem */
+    background-color: #f8f8f8;
+}
+
+.nav-button:active {
+    border-radius: 0.75rem; /* Используем rem */
+    background-color: #f6f6f6;
+}
+
+
+.search {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-grow: 1;
+    max-width: 70%;
+}
+
+.search-svg {
+    position: absolute;
+    padding: 9px 14px;
+    background-color: #81A34A;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.search-svg:hover {
+    cursor: pointer;
+    background-color: #738f42;
+}
+
+.search-svg:active {
+    background-color: #81A34A;
+}
+
+.search-input {
+    position: relative;
+    padding-left: 10px;
+    height: 33px;
+    background: #FFFFFF;
+    border: 3px solid #81A34A;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+}
+
+.title {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.title-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+
+.title-v1 {
+    font-weight: 700;
+    font-size: 2rem; /* Используем rem */
+    color: rgba(129, 163, 74, 0.99);
+    user-select: none;
+}
+
+.title-v2 {
+    font-weight: 700;
+    font-size: 2rem; /* Используем rem */
+    color: #594C91;
+    user-select: none;
+}
+
+.catalog-container {
+    position: relative;
+    display: inline-block;
+}
+
+.catalog-button {
+    margin-left: 80px;
+    background-color: #81A34A;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.catalog-button:hover {
+    background-color: #738f42;
+}
+
+.catalog-button:active {
+    background-color: #81A34A;
+}
+
+.catalog-svg {
+    margin-right: 0.5rem; /* Используем rem */
+}
+
+.catalog-dropdown {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    min-width: 100%; /* Занимает всю ширину родителя */
+    font-size: 1rem; /* Используем rem */
+    font-weight: 500;
+    color: #252525;
+    margin: 0;
+    border-radius: 0.75rem; /* Используем rem */
+}
+
+.catalog-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    column-count: 2;
+    column-gap: 1rem;
+    margin: 0;
+}
+
+.catalog-dropdown li {
+    padding: 0.5rem 0.75rem; /* Используем rem */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #eee; /* Разделитель между пунктами */
+}
+
+.catalog-dropdown li:last-child {
+    border-bottom: none; /* Удаляем разделитель у последнего пункта */
+}
+
+.catalog-dropdown li:hover {
+    background-color: #ededed;
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        position: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navigation {
+        background-color: #fff;
+        z-index: 1000;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-buttons {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nav-button {
+        margin-right: 1rem;
+        margin-bottom: 5px
+    }
+
+    .search {
+        align-items: center;
+        justify-content: end;
+        margin-top: 1rem;
+        margin-left: 0;
+        max-width: none;
+    }
+
+    .search-input {
+        width: 300px;
+    }
+
+    .search-svg {
+        padding-top: 11px;
+    }
+
+    .title {
+        flex-direction: column;
+    }
+
+    .catalog-button {
+        margin-left: 0px;
+        width: 120px;
+    }
+
+    .catalog-dropdown {
+        z-index: 1000;
+        min-width: 140px; /* Занимает всю ширину */
+        left: 0;
+        right: 0;
+    }
+
+    .catalog-dropdown ul{
+        column-count: 1; /* Убираем столбцы на маленьких экранах */
+    }
+}
+
+@media (max-width: 1170px) {
+
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        position: inherit;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .navigation {
+        background-color: #fff;
+        z-index: 1000;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-buttons {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nav-button {
+        margin-right: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .search {
+        justify-content: end;
+        align-items: center;
+    }
+
+    .search-input {
+    }
+
+    .search-svg {
+    }
+
+    .title {
+        flex-direction: column; /* Вертикальное расположение заголовка */
+    }
+
+    .catalog-button {
+        width: 120px;
+    }
+
+    .catalog-dropdown {
+        z-index: 1000;
+        min-width: 140px; /* Занимает всю ширину */
+        left: 0;
+        right: 0;
+    }
+
+    .catalog-dropdown ul{
+        column-count: 1; /* Убираем столбцы на маленьких экранах */
+    }
+}
