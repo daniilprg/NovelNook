@@ -1,0 +1,19 @@
+.SearchPage-title {
+    position: absolute;
+    background-color: #F0F0F0;
+    width: 100%;
+    left: 0;
+    top: 79px;
+    padding-left: 7.8%;
+    padding-right: 7.8%;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: -2;
+}
+
+@media (max-width: 1170px) {
+    .SearchPage-title {
+        top: 180px;
+    }
+}

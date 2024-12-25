@@ -1,11 +1,11 @@
-from django.db import models
+from django.db import models, IntegrityError
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.conf import settings
 
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, password=None, **extra_fields):
+    def create_user(self, email, password=None):
         """
         Создание обычного пользователя
         :param email password:
@@ -16,30 +16,27 @@ class UserManager(BaseUserManager):
 
         email = self.normalize_email(email)
 
-        user = self.model(email=email, **extra_fields)
+        user = self.model(email=email)
         user.set_password(password)
-        user.save(using=self._db)
+
+        try:
+            user.save(using=self._db)
+        except IntegrityError:
+            pass
 
         return user
 
-    def create_superuser(self, email, password=None, **extra_fields):
+    def create_superuser(self, email, password=None):
         """
         Создание администратора
         :param email password:
         """
 
-        extra_fields.setdefault('is_admin', True)
-        extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('is_staff', True)
+        user = self.create_user(email=email, password=password)
+        user.is_admin = True
+        user.save(using=self._db)
 
-        if extra_fields.get('is_admin') is not True:
-            raise ValueError('Суперпользователь должен иметь is_admin=True.')
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError('Суперпользователь должен иметь is_superuser=True.')
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError('Суперпользователь должен иметь is_staff=True.')
-
-        return self.create_user(email, password, **extra_fields)
+        return user
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -59,12 +56,25 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         """ Отображение аккаунта """
+
         return self.email
 
     def has_perm(self, perm, obj=None):
         """ Есть ли у пользователя определенное разрешение? """
+
         return True
 
     def has_module_perms(self, app_label):
         """ Есть ли у пользователя разрешения на просмотр приложения app_label? """
+
         return True
+
+    @property
+    def is_staff(self):
+        """ Является ли пользователь администратором? """
+
+        return self.is_admin
+
+    class Meta:
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'

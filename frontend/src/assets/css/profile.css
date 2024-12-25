@@ -1,0 +1,45 @@
+.Profile-title {
+    position: absolute;
+    background-color: #F0F0F0;
+    width: 100%;
+    left: 0;
+    top: 79px;
+    padding-left: 7.8%;
+    padding-right: 7.8%;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: -2;
+}
+
+.logout, .kill-all-session {
+    margin-top: 20px;
+    padding: 15px 25px;
+    background-color: #81A34A;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.logout:hover, .kill-all-session:hover {
+    background-color: #738f42;
+}
+
+.profile {
+    z-index: -2;
+    margin-top: 160px;
+}
+
+@media (max-width: 1170px) {
+    .Profile-title {
+        top: 180px;
+    }
+
+    .profile {
+        margin-top: 240px;
+    }
+}

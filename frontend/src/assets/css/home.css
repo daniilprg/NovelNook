@@ -1,0 +1,118 @@
+* {
+    border: none;
+    outline: none;
+}
+
+img,
+img:hover,
+img:active,
+img:focus {
+    border-radius: 15px;
+    outline: none;
+    border: none;
+}
+
+.slider-margin-books .slick-slide div {
+    margin-right: 32px;
+}
+
+.slick-slide div,
+.slick-track,
+.slider-image {
+    border-radius: 15px;
+}
+
+.slick-slide img {
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.slick-prev:before
+{
+    content: url('data:image/svg+xml,<svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7095 22C12.0495 21.9999 12.3817 21.8969 12.6636 21.7042C12.9456 21.5114 13.1644 21.2377 13.2922 20.918C13.42 20.5983 13.4509 20.2472 13.3809 19.9096C13.311 19.572 13.1433 19.2633 12.8995 19.0229L4.99666 11.0035L12.8995 2.98412C13.0634 2.82439 13.1943 2.63308 13.2845 2.42138C13.3747 2.20967 13.4223 1.98185 13.4246 1.75123C13.4269 1.52062 13.3838 1.29185 13.2979 1.07833C13.212 0.864817 13.085 0.670837 12.9243 0.507759C12.7636 0.344683 12.5724 0.215784 12.362 0.128611C12.1516 0.0414371 11.9262 -0.00225449 11.6989 8.96454e-05C11.4716 0.00243378 11.2471 0.0507679 11.0385 0.142263C10.8299 0.233759 10.6413 0.366577 10.4839 0.532936L1.37333 9.77793C1.05309 10.103 0.873192 10.5439 0.873192 11.0035C0.873192 11.4632 1.05309 11.904 1.37333 12.2291L10.4839 21.4741C10.6432 21.6405 10.8337 21.7728 11.0442 21.8631C11.2547 21.9534 11.4809 22 11.7095 22Z" fill="%2381A34A"/></svg>');;
+}
+
+.slick-next:before
+{
+    content: url('data:image/svg+xml,<svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.58835 0C2.24838 8.41201e-05 1.91617 0.10309 1.63422 0.29584C1.35227 0.48859 1.13341 0.762318 1.00563 1.082C0.877843 1.40168 0.846956 1.75278 0.916919 2.09038C0.986882 2.42797 1.15451 2.73671 1.39836 2.97709L9.30119 10.9965L1.39836 19.0159C1.23442 19.1756 1.10353 19.3669 1.01337 19.5786C0.923201 19.7903 0.875568 20.0182 0.873257 20.2488C0.870947 20.4794 0.914007 20.7081 0.999912 20.9217C1.08582 21.1352 1.21284 21.3292 1.37355 21.4922C1.53426 21.6553 1.72542 21.7842 1.93583 21.8714C2.14624 21.9586 2.37168 22.0023 2.59895 21.9999C2.82621 21.9976 3.05073 21.9492 3.25935 21.8577C3.46798 21.7662 3.65651 21.6334 3.81392 21.4671L12.9245 12.2221C13.2448 11.897 13.4247 11.4561 13.4247 10.9965C13.4247 10.5368 13.2448 10.096 12.9245 9.77089L3.81392 0.525899C3.65469 0.359505 3.46418 0.227225 3.25366 0.136892C3.04315 0.0465584 2.81691 9.22059e-06 2.58835 0Z" fill="%2381A34A"/></svg>');
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+    font-size: 20px;
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.slick-slide {
+    margin: 0;
+}
+
+.slick-list {
+    padding: 0;
+}
+
+.slick-dots li
+{
+    margin: 0 2px;
+
+}
+
+.slick-dots {
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 20%;
+}
+
+.slick-dots li button:before {
+    color: white;
+    font-size: 9px;
+    opacity: 20%;
+    transition: opacity 0.3s ease, font-size 0.2s ease;
+}
+
+.slick-dots li.slick-active button:before
+{
+    color: white;
+    font-size: 11px;
+    opacity: 30%;
+}
+
+@media (max-width: 1200px){
+    button.slick-arrow.slick-next {
+        display: none !important;
+    }
+
+    button.slick-arrow.slick-prev {
+        display: none !important;
+    }
+}
